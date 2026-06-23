@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; }
+    *, *::before, *::after { box-sizing: border-box; }
+    ::selection { background: #E85200; color: #fff; }
+  </style>
+</helmet>
+
+<div style="font-family:'Manrope',sans-serif; color:#1A1726; background:#ffffff; overflow-x:hidden; -webkit-font-smoothing:antialiased;">
+
+  <!-- NAVIGATION -->
+  <nav style="position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(42,13,82,0.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; padding:0 clamp(20px,4vw,48px); min-height:68px; border-bottom:1px solid rgba(255,255,255,0.09);">
+    <a href="#top" style="display:flex; align-items:center; text-decoration:none;">
+      <img src="assets/logo-tilli.png" alt="Autohaus Tilli – Partner von mobile.de" style="height:54px; width:auto; display:block;">
+    </a>
+    <div style="display:flex; align-items:center; gap:clamp(14px,2.6vw,34px); flex-wrap:wrap;">
+      <a href="#ankauf" style="font-size:14px; font-weight:600; color:rgba(255,255,255,0.74); text-decoration:none; transition:color .15s;" style-hover="color:#ffffff;">Auto verkaufen</a>
+      <a href="#bestand" style="font-size:14px; font-weight:600; color:rgba(255,255,255,0.74); text-decoration:none; transition:color .15s;" style-hover="color:#ffffff;">Fahrzeuge</a>
+      <a href="#ueber" style="font-size:14px; font-weight:600; color:rgba(255,255,255,0.74); text-decoration:none; transition:color .15s;" style-hover="color:#ffffff;">Über uns</a>
+      <a href="#kontakt" style="font-size:14px; font-weight:600; color:rgba(255,255,255,0.74); text-decoration:none; transition:color .15s;" style-hover="color:#ffffff;">Kontakt</a>
+      <a href="#ankauf" style="font-size:14px; font-weight:700; color:#ffffff; background:#E85200; padding:10px 20px; border-radius:10px; text-decoration:none; transition:background .15s, transform .1s;" style-hover="background:#FF6010; transform:translateY(-1px);">Jetzt bewerten</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" style="position:relative; overflow:hidden; background:linear-gradient(160deg,#43177D 0%,#3D1472 45%,#2A0D52 100%); padding:clamp(124px,16vh,168px) clamp(20px,5vw,48px) clamp(76px,11vh,104px);">
+    <div style="position:absolute; top:-12%; right:-6%; width:640px; height:640px; background:radial-gradient(circle, rgba(232,82,0,0.20) 0%, transparent 64%); pointer-events:none;"></div>
+    <div style="position:absolute; bottom:-30%; left:-10%; width:520px; height:520px; background:radial-gradient(circle, rgba(120,70,210,0.28) 0%, transparent 66%); pointer-events:none;"></div>
+    <div style="position:relative; max-width:1140px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(330px,1fr)); gap:clamp(40px,6vw,76px); align-items:center;">
+
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); padding:7px 14px; border-radius:999px; margin-bottom:26px;">
+          <span style="width:7px; height:7px; border-radius:50%; background:#E85200; box-shadow:0 0 0 4px rgba(232,82,0,0.22);"></span>
+          <span style="font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.78);">Partner von mobile.de</span>
+        </div>
+
+        <h1 style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(44px,6vw,78px); line-height:1.02; letter-spacing:-0.025em; color:#ffffff; margin:0 0 22px;">Wir kaufen<br><span style="color:#E85200;">Ihr Auto.</span></h1>
+
+        <p style="font-size:clamp(16px,1.7vw,19px); line-height:1.6; color:rgba(255,255,255,0.74); max-width:440px; margin:0 0 32px;">Kostenlose Bewertung, faire Preise und sofortige Auszahlung – unkompliziert und persönlich. Auch ohne Termin.</p>
+
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div style="display:flex; align-items:center; gap:13px; font-size:16px; font-weight:600; color:rgba(255,255,255,0.9);">
+            <span style="display:flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:50%; background:rgba(232,82,0,0.18); flex-shrink:0;"><svg width="15" height="15" fill="none" stroke="#E85200" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            Kostenlose Bewertung
+          </div>
+          <div style="display:flex; align-items:center; gap:13px; font-size:16px; font-weight:600; color:rgba(255,255,255,0.9);">
+            <span style="display:flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:50%; background:rgba(232,82,0,0.18); flex-shrink:0;"><svg width="15" height="15" fill="none" stroke="#E85200" stroke-width="3" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+            Schnelle Abwicklung
+          </div>
+          <div style="display:flex; align-items:center; gap:13px; font-size:16px; font-weight:600; color:rgba(255,255,255,0.9);">
+            <span style="display:flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:50%; background:rgba(232,82,0,0.18); flex-shrink:0;"><svg width="15" height="15" fill="none" stroke="#E85200" stroke-width="3" viewBox="0 0 24 24"><path d="M12 1v22M5 5h11a3.5 3.5 0 0 1 0 7H8a3.5 3.5 0 0 0 0 7h11"></path></svg></span>
+            Faire Preise
+          </div>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:38px;">
+          <a href="#ankauf" style="display:inline-flex; align-items:center; gap:8px; background:#E85200; color:#ffffff; font-family:'Sora',sans-serif; font-weight:700; font-size:16px; padding:15px 30px; border-radius:12px; text-decoration:none; transition:background .15s, transform .1s;" style-hover="background:#FF6010; transform:translateY(-1px);">Auto bewerten →</a>
+          <a href="#bestand" style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.22); color:#ffffff; font-family:'Sora',sans-serif; font-weight:600; font-size:16px; padding:15px 28px; border-radius:12px; text-decoration:none; transition:background .15s;" style-hover="background:rgba(255,255,255,0.16);">Fahrzeuge ansehen</a>
+        </div>
+      </div>
+
+      <!-- Roll-up Banner -->
+      <div style="display:flex; justify-content:center; align-items:flex-end; padding-bottom:28px;">
+        <div style="position:relative; width:min(340px,100%);">
+          <!-- Banner panel -->
+          <div style="border-radius:10px 10px 4px 4px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.55), 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.18);">
+            <img src="assets/banner-ankauf-v2.png" alt="Auto Ankauf – Partner von mobile.de – Wir kaufen Ihr Auto!" style="width:100%; height:auto; display:block;">
+          </div>
+          <!-- Roll-up pole -->
+          <div style="position:absolute; bottom:-22px; left:50%; transform:translateX(-50%); width:10px; height:26px; background:linear-gradient(90deg,#b0b0b0,#e8e8e8,#b0b0b0); border-radius:0 0 3px 3px;"></div>
+          <!-- Roll-up base foot -->
+          <div style="position:absolute; bottom:-28px; left:50%; transform:translateX(-50%); width:120px; height:12px; background:linear-gradient(90deg,#888,#c8c8c8,#888); border-radius:6px; box-shadow:0 4px 14px rgba(0,0,0,0.45);"></div>
+          <!-- Floor reflection -->
+          <div style="position:absolute; bottom:-40px; left:50%; transform:translateX(-50%); width:200px; height:18px; background:radial-gradient(ellipse at center,rgba(0,0,0,0.35) 0%,transparent 70%); border-radius:50%;"></div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- USP BAR -->
+  <section style="background:#ffffff; border-bottom:1px solid #EDEAF3; padding:30px clamp(20px,5vw,48px);">
+    <div style="max-width:1140px; margin:0 auto; display:flex; justify-content:center; gap:clamp(28px,5vw,64px); flex-wrap:wrap;">
+      <div style="display:flex; align-items:center; gap:13px;">
+        <span style="display:flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:12px; background:#F2EEFA; flex-shrink:0;"><svg width="20" height="20" fill="none" stroke="#3D1472" stroke-width="2.4" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span style="font-weight:700; font-size:15px; color:#1A1726;">Kostenlose Bewertung</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:13px;">
+        <span style="display:flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:12px; background:#F2EEFA; flex-shrink:0;"><svg width="20" height="20" fill="none" stroke="#3D1472" stroke-width="2.4" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+        <span style="font-weight:700; font-size:15px; color:#1A1726;">Schnelle Abwicklung</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:13px;">
+        <span style="display:flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:12px; background:#F2EEFA; flex-shrink:0;"><svg width="20" height="20" fill="none" stroke="#3D1472" stroke-width="2.4" viewBox="0 0 24 24"><path d="M12 1v22M5 5h11a3.5 3.5 0 0 1 0 7H8a3.5 3.5 0 0 0 0 7h11"></path></svg></span>
+        <span style="font-weight:700; font-size:15px; color:#1A1726;">Faire Preise</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:13px;">
+        <span style="display:flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:12px; background:#F2EEFA; flex-shrink:0;"><svg width="20" height="20" fill="none" stroke="#3D1472" stroke-width="2.4" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span>
+        <span style="font-weight:700; font-size:15px; color:#1A1726;">Persönliche Beratung</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANKAUF / FORMULAR -->
+  <section id="ankauf" style="background:#F6F4FB; padding:clamp(66px,10vh,108px) clamp(20px,5vw,48px);">
+    <div style="max-width:1140px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(330px,1fr)); gap:clamp(40px,5vw,64px); align-items:start;">
+
+      <!-- Links: Info -->
+      <div>
+        <div style="font-weight:700; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#E85200; margin-bottom:12px;">Auto Ankauf</div>
+        <h2 style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(30px,4vw,46px); line-height:1.05; letter-spacing:-0.025em; color:#3D1472; margin:0 0 16px;">Ihr Auto in guten Händen</h2>
+        <p style="font-size:17px; line-height:1.6; color:#6B6480; max-width:480px; margin:0 0 44px;">Wir machen Ihnen ein faires Angebot für Ihr Fahrzeug — schnell, unkompliziert und ohne versteckte Kosten.</p>
+
+        <div style="margin-bottom:36px; display:flex; flex-direction:column; gap:26px;">
+          <div style="display:flex; gap:18px;">
+            <div style="flex-shrink:0; width:42px; height:42px; border-radius:13px; background:#3D1472; color:#ffffff; font-family:'Sora',sans-serif; font-weight:700; font-size:18px; display:flex; align-items:center; justify-content:center;">1</div>
+            <div>
+              <h4 style="font-family:'Sora',sans-serif; font-weight:700; font-size:17px; color:#1A1726; margin:0 0 5px;">Fahrzeug beschreiben</h4>
+              <p style="font-size:15px; color:#6B6480; line-height:1.55; margin:0;">Füllen Sie das Formular aus — Marke, Modell, Kilometerstand und Zustand. Dauert nur 2 Minuten.</p>
+            </div>
+          </div>
+          <div style="display:flex; gap:18px;">
+            <div style="flex-shrink:0; width:42px; height:42px; border-radius:13px; background:#3D1472; color:#ffffff; font-family:'Sora',sans-serif; font-weight:700; font-size:18px; display:flex; align-items:center; justify-content:center;">2</div>
+            <div>
+              <h4 style="font-family:'Sora',sans-serif; font-weight:700; font-size:17px; color:#1A1726; margin:0 0 5px;">Angebot erhalten</h4>
+              <p style="font-size:15px; color:#6B6480; line-height:1.55; margin:0;">Wir melden uns innerhalb von 24 Stunden mit einem konkreten Kaufangebot bei Ihnen.</p>
+            </div>
+          </div>
+          <div style="display:flex; gap:18px;">
+            <div style="flex-shrink:0; width:42px; height:42px; border-radius:13px; background:#3D1472; color:#ffffff; font-family:'Sora',sans-serif; font-weight:700; font-size:18px; display:flex; align-items:center; justify-content:center;">3</div>
+            <div>
+              <h4 style="font-family:'Sora',sans-serif; font-weight:700; font-size:17px; color:#1A1726; margin:0 0 5px;">Direkte Auszahlung</h4>
+              <p style="font-size:15px; color:#6B6480; line-height:1.55; margin:0;">Sie bringen das Fahrzeug vorbei, wir prüfen kurz, und Sie erhalten sofort Ihr Geld.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:flex-start; gap:14px; background:#3D1472; color:#ffffff; border-radius:14px; padding:20px 22px;">
+          <svg width="22" height="22" fill="none" stroke="#E85200" stroke-width="2.2" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:1px;"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4m0 4h.01"></path></svg>
+          <p style="font-size:15px; line-height:1.55; margin:0;"><strong style="color:#FF7A2E;">Auch ohne Termin!</strong> Kommen Sie einfach direkt zu uns. Wir nehmen uns die Zeit für eine persönliche Bewertung vor Ort.</p>
+        </div>
+      </div>
+
+      <!-- Rechts: Formular -->
+      <div style="background:#ffffff; border-radius:20px; box-shadow:0 8px 50px rgba(61,20,114,0.13); overflow:hidden;">
+        <div style="background:linear-gradient(135deg,#43177D,#3D1472); padding:24px 30px;">
+          <h3 style="font-family:'Sora',sans-serif; font-weight:700; font-size:21px; letter-spacing:-0.01em; color:#ffffff; margin:0;">Fahrzeug zur Bewertung anmelden</h3>
+          <p style="font-size:13.5px; color:rgba(255,255,255,0.6); margin:6px 0 0;">Alle Felder sind optional — je mehr Sie ausfüllen, desto genauer unser Angebot</p>
+        </div>
+        <div style="padding:30px;">
+
+          <sc-if value="{{ formVisible }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submitForm }}">
+
+            <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#E85200; margin:0 0 14px;">Fahrzeugdaten</div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px; margin-bottom:14px;">
+              <div>
+                <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Marke</label>
+                <select name="marke" style="width:100%; padding:12px 36px 12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background-color:#ffffff; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%233D1472' d='M6 8L0 0h12z'/%3E%3C/svg%3E&quot;); background-repeat:no-repeat; background-position:right 15px center; -webkit-appearance:none; appearance:none; cursor:pointer; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+                  <option value="">Bitte wählen…</option>
+                  <sc-for list="{{ markeOptions }}" as="opt" hint-placeholder-count="5"><option>{{ opt }}</option></sc-for>
+                </select>
+              </div>
+              <div>
+                <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Modell</label>
+                <input type="text" name="modell" placeholder="z. B. Golf, A3, 3er…" style="width:100%; padding:12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background:#ffffff; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px; margin-bottom:14px;">
+              <div>
+                <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Erstzulassung</label>
+                <select name="erstzulassung" style="width:100%; padding:12px 36px 12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background-color:#ffffff; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%233D1472' d='M6 8L0 0h12z'/%3E%3C/svg%3E&quot;); background-repeat:no-repeat; background-position:right 15px center; -webkit-appearance:none; appearance:none; cursor:pointer; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+                  <option value="">Bitte wählen…</option>
+                  <sc-for list="{{ erstzulassungOptions }}" as="opt" hint-placeholder-count="5"><option>{{ opt }}</option></sc-for>
+                </select>
+              </div>
+              <div>
+                <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Kilometerstand</label>
+                <input type="text" name="km" placeholder="z. B. 85.000 km" style="width:100%; padding:12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background:#ffffff; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px; margin-bottom:14px;">
+              <div>
+                <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Kraftstoff</label>
+                <select name="kraftstoff" style="width:100%; padding:12px 36px 12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background-color:#ffffff; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%233D1472' d='M6 8L0 0h12z'/%3E%3C/svg%3E&quot;); background-repeat:no-repeat; background-position:right 15px center; -webkit-appearance:none; appearance:none; cursor:pointer; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+                  <option value="">Bitte wählen…</option>
+                  <sc-for list="{{ kraftstoffOptions }}" as="opt" hint-placeholder-count="4"><option>{{ opt }}</option></sc-for>
+                </select>
+              </div>
+              <div>
+                <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Getriebe</label>
+                <select name="getriebe" style="width:100%; padding:12px 36px 12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background-color:#ffffff; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%233D1472' d='M6 8L0 0h12z'/%3E%3C/svg%3E&quot;); background-repeat:no-repeat; background-position:right 15px center; -webkit-appearance:none; appearance:none; cursor:pointer; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+                  <option value="">Bitte wählen…</option>
+                  <sc-for list="{{ getriebeOptions }}" as="opt" hint-placeholder-count="3"><option>{{ opt }}</option></sc-for>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-bottom:14px;">
+              <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Fahrzeugzustand</label>
+              <select name="zustand" style="width:100%; padding:12px 36px 12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background-color:#ffffff; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%233D1472' d='M6 8L0 0h12z'/%3E%3C/svg%3E&quot;); background-repeat:no-repeat; background-position:right 15px center; -webkit-appearance:none; appearance:none; cursor:pointer; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+                <option value="">Bitte wählen…</option>
+                <sc-for list="{{ zustandOptions }}" as="opt" hint-placeholder-count="4"><option>{{ opt }}</option></sc-for>
+              </select>
+            </div>
+
+            <div style="margin-bottom:4px;">
+              <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Besonderheiten / Ausstattung</label>
+              <textarea name="besonderheiten" placeholder="z. B. Sitzheizung, Navigationssystem, Unfallschäden, Reparaturstau…" style="width:100%; padding:12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background:#ffffff; outline:none; resize:vertical; min-height:84px; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);"></textarea>
+            </div>
+
+            <hr style="border:none; border-top:1px solid #EDEAF3; margin:22px 0;">
+            <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#E85200; margin:0 0 14px;">Historie &amp; Zustand</div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px; margin-bottom:14px;">
+              <div>
+                <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">TÜV / HU gültig</label>
+                <select name="tuv" style="width:100%; padding:12px 36px 12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background-color:#ffffff; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%233D1472' d='M6 8L0 0h12z'/%3E%3C/svg%3E&quot;); background-repeat:no-repeat; background-position:right 15px center; -webkit-appearance:none; appearance:none; cursor:pointer; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+                  <option value="">Bitte wählen…</option>
+                  <sc-for list="{{ tuvOptions }}" as="opt" hint-placeholder-count="4"><option>{{ opt }}</option></sc-for>
+                </select>
+              </div>
+              <div>
+                <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Letzter Service</label>
+                <select name="service" style="width:100%; padding:12px 36px 12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background-color:#ffffff; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%233D1472' d='M6 8L0 0h12z'/%3E%3C/svg%3E&quot;); background-repeat:no-repeat; background-position:right 15px center; -webkit-appearance:none; appearance:none; cursor:pointer; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+                  <option value="">Bitte wählen…</option>
+                  <sc-for list="{{ serviceOptions }}" as="opt" hint-placeholder-count="4"><option>{{ opt }}</option></sc-for>
+                </select>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px; margin-bottom:14px;">
+              <div>
+                <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Unfall</label>
+                <select name="unfall" style="width:100%; padding:12px 36px 12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background-color:#ffffff; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%233D1472' d='M6 8L0 0h12z'/%3E%3C/svg%3E&quot;); background-repeat:no-repeat; background-position:right 15px center; -webkit-appearance:none; appearance:none; cursor:pointer; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+                  <option value="">Bitte wählen…</option>
+                  <sc-for list="{{ unfallOptions }}" as="opt" hint-placeholder-count="4"><option>{{ opt }}</option></sc-for>
+                </select>
+              </div>
+              <div>
+                <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Nachlackierungen</label>
+                <select name="lack" style="width:100%; padding:12px 36px 12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background-color:#ffffff; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%233D1472' d='M6 8L0 0h12z'/%3E%3C/svg%3E&quot;); background-repeat:no-repeat; background-position:right 15px center; -webkit-appearance:none; appearance:none; cursor:pointer; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+                  <option value="">Bitte wählen…</option>
+                  <sc-for list="{{ lackOptions }}" as="opt" hint-placeholder-count="4"><option>{{ opt }}</option></sc-for>
+                </select>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px; margin-bottom:14px;">
+              <div>
+                <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Anzahl Vorbesitzer</label>
+                <select name="vorbesitzer" style="width:100%; padding:12px 36px 12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background-color:#ffffff; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%233D1472' d='M6 8L0 0h12z'/%3E%3C/svg%3E&quot;); background-repeat:no-repeat; background-position:right 15px center; -webkit-appearance:none; appearance:none; cursor:pointer; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+                  <option value="">Bitte wählen…</option>
+                  <sc-for list="{{ vorbesitzerOptions }}" as="opt" hint-placeholder-count="4"><option>{{ opt }}</option></sc-for>
+                </select>
+              </div>
+              <div>
+                <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Bereifung</label>
+                <select name="bereifung" style="width:100%; padding:12px 36px 12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background-color:#ffffff; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%233D1472' d='M6 8L0 0h12z'/%3E%3C/svg%3E&quot;); background-repeat:no-repeat; background-position:right 15px center; -webkit-appearance:none; appearance:none; cursor:pointer; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+                  <option value="">Bitte wählen…</option>
+                  <sc-for list="{{ bereifungOptions }}" as="opt" hint-placeholder-count="4"><option>{{ opt }}</option></sc-for>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-bottom:4px;">
+              <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Aktuelle Mängel / Defekte</label>
+              <textarea name="maengel" placeholder="z. B. Klimaanlage ohne Funktion, Steinschlag Windschutzscheibe, Steuerkette rasselt …" style="width:100%; padding:12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background:#ffffff; outline:none; resize:vertical; min-height:84px; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);"></textarea>
+            </div>
+
+            <hr style="border:none; border-top:1px solid #EDEAF3; margin:22px 0;">
+            <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#E85200; margin:0 0 14px;">Ihre Preisvorstellung</div>
+
+            <div style="margin-bottom:4px;">
+              <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Gewünschter Verkaufspreis (€)</label>
+              <div style="position:relative;">
+                <span style="position:absolute; left:15px; top:50%; transform:translateY(-50%); font-weight:700; color:#3D1472; font-size:15px; pointer-events:none;">€</span>
+                <input type="number" name="preis" placeholder="z. B. 8500" min="0" step="100" style="width:100%; padding:12px 15px 12px 34px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background:#ffffff; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+              </div>
+            </div>
+
+            <hr style="border:none; border-top:1px solid #EDEAF3; margin:22px 0;">
+            <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#E85200; margin:0 0 14px;">Ihre Kontaktdaten</div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px; margin-bottom:14px;">
+              <div>
+                <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Vorname</label>
+                <input type="text" name="vorname" placeholder="Max" style="width:100%; padding:12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background:#ffffff; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+              </div>
+              <div>
+                <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Nachname</label>
+                <input type="text" name="nachname" placeholder="Mustermann" style="width:100%; padding:12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background:#ffffff; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px; margin-bottom:14px;">
+              <div>
+                <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">Telefon</label>
+                <input type="tel" name="telefon" placeholder="+49 …" style="width:100%; padding:12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background:#ffffff; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+              </div>
+              <div>
+                <label style="display:block; font-size:12px; font-weight:600; letter-spacing:0.03em; color:#6B6480; margin-bottom:6px;">E-Mail</label>
+                <input type="email" name="email" placeholder="max@beispiel.de" style="width:100%; padding:12px 15px; border:1.5px solid #E2DEEC; border-radius:11px; font-family:'Manrope',sans-serif; font-size:15px; color:#1A1726; background:#ffffff; outline:none; transition:border-color .15s, box-shadow .15s;" style-focus="border-color:#3D1472; box-shadow:0 0 0 3px rgba(61,20,114,0.12);">
+              </div>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:12px; margin-top:22px;">
+              <button type="submit" style="width:100%; background:#E85200; color:#ffffff; font-family:'Sora',sans-serif; font-weight:700; font-size:17px; letter-spacing:0.01em; padding:16px; border:none; border-radius:12px; cursor:pointer; transition:background .15s, transform .1s;" style-hover="background:#FF6010; transform:translateY(-1px);">Jetzt Angebot anfragen →</button>
+              <p style="font-size:11.5px; color:#9991AC; text-align:center; line-height:1.5; margin:0;">Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben. Mit dem Absenden stimmen Sie unserer Datenschutzerklärung zu.</p>
+            </div>
+          </form>
+          </sc-if>
+
+          <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#127A3E; color:#ffffff; border-radius:14px; padding:28px 24px; text-align:center;">
+            <div style="margin:0 auto 14px; width:52px; height:52px; border-radius:50%; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center;"><svg width="26" height="26" fill="none" stroke="#ffffff" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:19px; margin-bottom:6px;">Vielen Dank!</div>
+            <p style="font-size:15px; color:rgba(255,255,255,0.85); margin:0;">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+          </div>
+          </sc-if>
+
+          <sc-if value="{{ rejected }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#ffffff; border:1.5px solid #F2D9C8; border-radius:14px; padding:28px 24px; text-align:center;">
+            <div style="margin:0 auto 16px; width:52px; height:52px; border-radius:50%; background:#FDEDE3; display:flex; align-items:center; justify-content:center;"><svg width="26" height="26" fill="none" stroke="#E85200" stroke-width="2.4" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4m0 4h.01"></path></svg></div>
+            <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:19px; color:#1A1726; margin-bottom:8px;">Anfrage aktuell nicht möglich</div>
+            <p style="font-size:15px; color:#6B6480; line-height:1.6; margin:0 0 20px;">Aufgrund der eingegebenen Fahrzeugdaten ist ein Ankauf aktuell leider nicht möglich. Gerne können Sie uns bei Fragen direkt kontaktieren.</p>
+            <button type="button" onClick="{{ resetForm }}" style="background:#3D1472; color:#ffffff; font-family:'Sora',sans-serif; font-weight:700; font-size:15px; padding:13px 26px; border:none; border-radius:11px; cursor:pointer; transition:background .15s;" style-hover="background:#4E1A90;">Zurück zum Formular</button>
+          </div>
+          </sc-if>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAHRZEUGBESTAND -->
+  <section id="bestand" style="background:#ffffff; padding:clamp(66px,10vh,108px) clamp(20px,5vw,48px);">
+    <div style="max-width:1140px; margin:0 auto;">
+      <div style="font-weight:700; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#E85200; margin-bottom:12px;">Aktuelle Fahrzeuge</div>
+      <h2 style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(30px,4vw,46px); line-height:1.05; letter-spacing:-0.025em; color:#3D1472; margin:0 0 16px;">Unser Fahrzeugbestand</h2>
+      <p style="font-size:17px; line-height:1.6; color:#6B6480; max-width:560px; margin:0 0 44px;">Alle unsere Fahrzeuge finden Sie direkt auf mobile.de — Deutschlands größtem Fahrzeugmarkt.</p>
+
+      <div style="border-radius:18px; overflow:hidden; border:1px solid #E6E1F0; background:#F6F4FB; position:relative; height:800px;">
+        <iframe src="https://home.mobile.de/home/index.html?partnerHead=false&amp;customerId=465208" title="Autohaus Tilli Fahrzeugbestand auf mobile.de" loading="lazy" allow="fullscreen" style="width:100%; height:100%; border:none; display:block;"></iframe>
+      </div>
+
+      <div style="text-align:center; margin-top:34px;">
+        <a href="https://home.mobile.de/home/index.html?customerId=465208" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#E85200; color:#ffffff; font-family:'Sora',sans-serif; font-weight:700; font-size:16px; padding:15px 38px; border-radius:12px; text-decoration:none; transition:background .15s, transform .1s;" style-hover="background:#FF6010; transform:translateY(-1px);">Alle Fahrzeuge auf mobile.de ansehen →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÜBER UNS -->
+  <section id="ueber" style="background:linear-gradient(160deg,#3D1472,#2A0D52); padding:clamp(66px,10vh,108px) clamp(20px,5vw,48px);">
+    <div style="max-width:1140px; margin:0 auto;">
+      <div style="font-weight:700; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#E85200; margin-bottom:12px;">Über uns</div>
+      <h2 style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(30px,4vw,46px); line-height:1.05; letter-spacing:-0.025em; color:#ffffff; margin:0 0 16px;">Ihr verlässlicher KFZ-Partner</h2>
+      <p style="font-size:17px; line-height:1.6; color:rgba(255,255,255,0.66); max-width:560px; margin:0 0 48px;">Autohaus Tilli steht für ehrlichen Fahrzeughandel — mit Fairness, Transparenz und echtem Engagement für jeden Kunden.</p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px;">
+        <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:30px 26px;">
+          <div style="width:50px; height:50px; background:linear-gradient(150deg,#E85200,#FF7A2E); border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:18px;"><svg width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2.4" viewBox="0 0 24 24"><path d="M12 1v22M5 5h11a3.5 3.5 0 0 1 0 7H8a3.5 3.5 0 0 0 0 7h11"></path></svg></div>
+          <h4 style="font-family:'Sora',sans-serif; font-weight:700; font-size:19px; color:#ffffff; margin:0 0 10px;">Faire Preise</h4>
+          <p style="font-size:15px; color:rgba(255,255,255,0.62); line-height:1.6; margin:0;">Wir zahlen marktgerechte Preise — ohne unnötige Verhandlung. Kein Druck, kein Theater.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:30px 26px;">
+          <div style="width:50px; height:50px; background:linear-gradient(150deg,#E85200,#FF7A2E); border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:18px;"><svg width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2.4" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+          <h4 style="font-family:'Sora',sans-serif; font-weight:700; font-size:19px; color:#ffffff; margin:0 0 10px;">Sofortige Abwicklung</h4>
+          <p style="font-size:15px; color:rgba(255,255,255,0.62); line-height:1.6; margin:0;">Fahrzeug bringen, kurze Prüfung, direkte Auszahlung. Kein Warten, keine Bürokratie.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:30px 26px;">
+          <div style="width:50px; height:50px; background:linear-gradient(150deg,#E85200,#FF7A2E); border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:18px;"><svg width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2.4" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+          <h4 style="font-family:'Sora',sans-serif; font-weight:700; font-size:19px; color:#ffffff; margin:0 0 10px;">Persönliche Beratung</h4>
+          <p style="font-size:15px; color:rgba(255,255,255,0.62); line-height:1.6; margin:0;">Kein Callcenter, keine langen Wartezeiten. Wir nehmen uns Zeit für jeden Kunden persönlich.</p>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:18px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); border-radius:16px; padding:22px 28px; margin-top:30px; flex-wrap:wrap;">
+        <div style="width:50px; height:50px; border-radius:12px; background:#E85200; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><span style="font-family:'Sora',sans-serif; font-weight:800; font-size:22px; color:#ffffff;">m.</span></div>
+        <div style="min-width:200px; flex:1;">
+          <strong style="display:block; font-family:'Sora',sans-serif; font-size:18px; font-weight:700; color:#ffffff; margin-bottom:3px;">Partner von mobile.de</strong>
+          <span style="font-size:14px; color:rgba(255,255,255,0.62); line-height:1.45;">Deutschlands größter Fahrzeugmarkt — unsere Fahrzeuge sind dort gelistet und geprüft.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt" style="background:#F6F4FB; padding:clamp(66px,10vh,108px) clamp(20px,5vw,48px);">
+    <div style="max-width:1140px; margin:0 auto;">
+      <div style="font-weight:700; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#E85200; margin-bottom:12px;">Kontakt</div>
+      <h2 style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(30px,4vw,46px); line-height:1.05; letter-spacing:-0.025em; color:#3D1472; margin:0 0 44px;">So finden Sie uns</h2>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(36px,5vw,60px);">
+        <div>
+          <h3 style="font-family:'Sora',sans-serif; font-weight:700; font-size:24px; letter-spacing:-0.01em; color:#3D1472; margin:0 0 26px;">Autohaus Tilli Kaltenkirchen</h3>
+
+          <div style="display:flex; gap:15px; margin-bottom:20px; align-items:flex-start;">
+            <div style="width:44px; height:44px; border-radius:12px; background:#3D1472; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="20" height="20" fill="none" stroke="#ffffff" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+            <div>
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#9991AC; margin-bottom:3px;">Adresse</label>
+              <span style="font-size:16px; font-weight:600; color:#1A1726;">Senefelder Str. 1, 24568 Kaltenkirchen</span>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:15px; margin-bottom:20px; align-items:flex-start;">
+            <div style="width:44px; height:44px; border-radius:12px; background:#3D1472; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="20" height="20" fill="none" stroke="#ffffff" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.95 12 19.79 19.79 0 0 1 1.93 3.4 2 2 0 0 1 3.9 1.23h3a2 2 0 0 1 2 1.72c.212.965.455 1.92.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l1.13-1.13a2 2 0 0 1 2.11-.45c.89.245 1.845.488 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
+            <div>
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#9991AC; margin-bottom:3px;">TELEFON / WHATSAPP</label>
+              <span style="font-size:16px; font-weight:600; color:#1A1726;"><a href="tel:+49000000000" style="color:inherit; text-decoration:none;">+49 (176) 401 57929</a></span>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:15px; margin-bottom:20px; align-items:flex-start;">
+            <div style="width:44px; height:44px; border-radius:12px; background:#3D1472; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="20" height="20" fill="none" stroke="#ffffff" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+            <div>
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#9991AC; margin-bottom:3px;">E-Mail</label>
+              <span style="font-size:16px; font-weight:600; color:#1A1726;"><a href="mailto:info@autohaus-tilli.de" style="color:inherit; text-decoration:none;">autohaustilli@aim.com</a></span>
+            </div>
+          </div>
+
+          <div style="background:#ffffff; border-radius:16px; padding:26px; margin-top:26px; border:1px solid #E6E1F0;">
+            <h4 style="font-family:'Sora',sans-serif; font-weight:700; font-size:16px; letter-spacing:-0.01em; color:#3D1472; margin:0 0 16px;">Öffnungszeiten</h4>
+            <div style="display:flex; justify-content:space-between; font-size:15px; padding:8px 0; border-bottom:1px solid #F0EDF7; color:#1A1726;"><span style="color:#6B6480;">Montag – Freitag</span><span style="font-weight:600;">10:00 – 18:00 Uhr</span></div>
+            <div style="display:flex; justify-content:space-between; font-size:15px; padding:8px 0; border-bottom:1px solid #F0EDF7; color:#1A1726;"><span style="color:#6B6480;">Samstag</span><span style="font-weight:600;">10:00 – 14:00 Uhr</span></div>
+            <div style="display:flex; justify-content:space-between; font-size:15px; padding:8px 0; color:#1A1726;"><span style="color:#6B6480;">Sonntag</span><span style="font-weight:600;">Geschlossen</span></div>
+            <div style="display:flex; align-items:center; gap:8px; color:#E85200; font-size:14px; font-weight:600; padding-top:14px;"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Auch ohne Termin willkommen!</div>
+          </div>
+        </div>
+
+        <div style="border:1px solid #E6E1F0; border-radius:18px; overflow:hidden; min-height:340px; box-shadow:0 8px 40px rgba(61,20,114,0.1);">
+          <iframe src="https://maps.google.com/maps?q=Senefelder%20Str.%201%2C%2024568%20Kaltenkirchen&amp;output=embed" title="Standort Autohaus Tilli – Senefelder Str. 1, Kaltenkirchen" loading="lazy" style="width:100%; height:100%; min-height:340px; border:none; display:block;"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#2A0D52; padding:clamp(40px,6vh,56px) clamp(20px,5vw,48px); text-align:center;">
+    <img src="assets/logo-tilli.png" alt="Autohaus Tilli" style="height:86px; width:auto; margin:0 auto 22px; display:block;">
+    <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-bottom:24px;">
+      <a href="#" style="font-size:14px; color:rgba(255,255,255,0.55); text-decoration:none; transition:color .15s;" style-hover="color:#E85200;">Impressum</a>
+      <a href="#" style="font-size:14px; color:rgba(255,255,255,0.55); text-decoration:none; transition:color .15s;" style-hover="color:#E85200;">Datenschutz</a>
+      <a href="#" style="font-size:14px; color:rgba(255,255,255,0.55); text-decoration:none; transition:color .15s;" style-hover="color:#E85200;">AGB</a>
+      <a href="https://www.mobile.de" target="_blank" rel="noopener" style="font-size:14px; color:rgba(255,255,255,0.55); text-decoration:none; transition:color .15s;" style-hover="color:#E85200;">mobile.de</a>
+    </div>
+    <hr style="border:none; border-top:1px solid rgba(255,255,255,0.1); margin:22px auto; max-width:1140px;">
+    <div style="font-size:12.5px; color:rgba(255,255,255,0.28);">© 2025 Autohaus Tilli · Alle Rechte vorbehalten</div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { submitted: false, rejected: false };
+
+  renderVals() {
+    return {
+      submitted: this.state.submitted,
+      rejected: this.state.rejected,
+      formVisible: !this.state.submitted && !this.state.rejected,
+      resetForm: () => this.setState({ rejected: false }),
+      submitForm: (e) => {
+        e.preventDefault();
+        const f = e.target;
+        const km = parseInt(((f.km && f.km.value) || '').replace(/[^0-9]/g, ''), 10) || 0;
+        const preis = parseFloat(((f.preis && f.preis.value) || '').toString().replace(/[^0-9.,]/g, '').replace(',', '.')) || 0;
+        if (preis > 15000 || km > 220000) {
+          this.setState({ rejected: true });
+          return;
+        }
+        const g = (n) => { const el = f[n]; return (el && el.value && el.value.trim()) ? el.value.trim() : '—'; };
+        const body = [
+          'Fahrzeug-Ankaufsanfrage – Autohaus Tilli', '',
+          '— FAHRZEUG —',
+          'Marke: ' + g('marke'),
+          'Modell: ' + g('modell'),
+          'Erstzulassung: ' + g('erstzulassung'),
+          'Kilometerstand: ' + g('km'),
+          'Kraftstoff: ' + g('kraftstoff'),
+          'Getriebe: ' + g('getriebe'),
+          'Zustand: ' + g('zustand'),
+          'TÜV / HU gültig: ' + g('tuv'),
+          'Letzter Service: ' + g('service'),
+          'Unfall: ' + g('unfall'),
+          'Nachlackierungen: ' + g('lack'),
+          'Anzahl Vorbesitzer: ' + g('vorbesitzer'),
+          'Bereifung: ' + g('bereifung'),
+          'Aktuelle Mängel / Defekte: ' + g('maengel'),
+          'Besonderheiten / Ausstattung: ' + g('besonderheiten'),
+          '',
+          '— PREISVORSTELLUNG —',
+          'Wunschpreis: ' + g('preis') + ' €',
+          '',
+          '— KONTAKT —',
+          'Name: ' + g('vorname') + ' ' + g('nachname'),
+          'Telefon: ' + g('telefon'),
+          'E-Mail: ' + g('email')
+        ].join('\n');
+        const subject = 'Ankaufsanfrage: ' + g('marke') + ' ' + g('modell');
+        const url = 'mailto:autohaustilli@aim.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        const a = document.createElement('a');
+        a.href = url; a.style.display = 'none';
+        document.body.appendChild(a); a.click(); a.remove();
+        this.setState({ submitted: true });
+      },
+      markeOptions: ['Audi', 'BMW', 'Citroën', 'Cupra', 'Dacia', 'Fiat', 'Ford', 'Honda', 'Hyundai', 'Kia', 'Mazda', 'Mercedes-Benz', 'Mini', 'Mitsubishi', 'Nissan', 'Opel', 'Peugeot', 'Renault', 'Seat', 'Skoda', 'Suzuki', 'Tesla', 'Toyota', 'Volkswagen', 'Volvo', 'Andere'],
+      erstzulassungOptions: (() => { const a = []; for (let y = 2026; y >= 1995; y--) a.push(String(y)); a.push('vor 1995'); return a; })(),
+      tuvOptions: ['Neu bei Übergabe', 'Über 12 Monate', '6–12 Monate', 'Unter 6 Monate', 'Abgelaufen / keine HU'],
+      serviceOptions: ['Vor weniger als 6 Monaten', 'Vor 6–12 Monaten', 'Vor 1–2 Jahren', 'Vor über 2 Jahren', 'Unbekannt'],
+      unfallOptions: ['Unfallfrei', 'Bagatellschaden (repariert)', 'Unfallschaden (repariert)', 'Unfallschaden (nicht repariert)'],
+      lackOptions: ['Keine Nachlackierungen', 'Teilweise nachlackiert', 'Komplett nachlackiert', 'Unbekannt'],
+      vorbesitzerOptions: ['1', '2', '3', '4', '5 oder mehr', 'Unbekannt'],
+      bereifungOptions: ['Sommerreifen', 'Winterreifen', 'Ganzjahresreifen', 'Sommer- + Winterreifen (2 Sätze)'],
+      kraftstoffOptions: ['Benzin', 'Diesel', 'Elektro', 'Hybrid', 'Erdgas (CNG)', 'Flüssiggas (LPG)'],
+      getriebeOptions: ['Schaltgetriebe', 'Automatik', 'Halbautomatik'],
+      zustandOptions: ['Sehr gut (neuwertig)', 'Gut (normale Gebrauchsspuren)', 'Befriedigend (sichtbare Mängel)', 'Defekt / Unfallschaden'],
+    };
+  }
+}
+</script>
+</body>
+</html>

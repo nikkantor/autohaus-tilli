@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autohaus Tilli – KFZ Ankauf &amp; Verkauf</title>
+  <meta name="description" content="Autohaus Tilli – Wir kaufen Ihr Auto! Kostenlose Bewertung, schnelle Abwicklung, faire Preise. KFZ Ankauf &amp; Verkauf – Partner von mobile.de.">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --purple:   #3D1472;
+      --purple-d: #2a0d52;
+      --purple-l: #4e1a90;
+      --orange:   #E85200;
+      --orange-h: #ff6010;
+      --white:    #ffffff;
+      --off:      #f4f2f9;
+      --gray:     #666;
+      --text:     #1a1a2e;
+      --radius:   6px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Barlow', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--purple-d);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 32px;
+      height: 64px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    }
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 22px;
+      color: var(--white);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .nav-logo span { color: var(--orange); }
+    .nav-logo sub {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 2px;
+    }
+    .nav-links {
+      display: flex; gap: 32px; list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-cta {
+      background: var(--orange);
+      color: var(--white) !important;
+      padding: 8px 20px;
+      border-radius: var(--radius);
+      font-weight: 900 !important;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--orange-h) !important; color: var(--white) !important; }
+    .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .nav-burger span { display: block; width: 26px; height: 3px; background: white; border-radius: 2px; transition: .3s; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--purple);
+      padding: 120px 32px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(232,82,0,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center;
+    }
+    .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(52px, 7vw, 88px);
+      line-height: .95;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .hero h1 .hl { color: var(--orange); }
+    .hero-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 20px;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 12px 28px; border-radius: var(--radius);
+      margin-bottom: 36px;
+    }
+    .hero-usps { display: flex; flex-direction: column; gap: 12px; }
+    .hero-usp {
+      display: flex; align-items: center; gap: 12px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 17px; letter-spacing: .5px;
+      color: rgba(255,255,255,.85);
+    }
+    .hero-usp svg { flex-shrink: 0; color: var(--orange); }
+
+    /* Hero card (mini form teaser) */
+    .hero-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .hero-card-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 28px; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--white); margin-bottom: 8px;
+    }
+    .hero-card-sub {
+      font-size: 14px; color: rgba(255,255,255,.6); margin-bottom: 24px;
+    }
+    .hero-card-icon {
+      margin: 0 auto 20px;
+      width: 80px; height: 80px;
+    }
+    .hero-card-icon svg { width: 100%; height: 100%; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 17px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 14px 32px; border-radius: var(--radius);
+      border: none; cursor: pointer;
+      transition: background .2s, transform .1s;
+      width: 100%;
+    }
+    .btn-primary:hover { background: var(--orange-h); transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+
+    /* ── USP BAR ── */
+    .usp-bar {
+      background: var(--white);
+      border-bottom: 3px solid var(--orange);
+      padding: 20px 32px;
+    }
+    .usp-bar-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;
+    }
+    .usp-item {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .usp-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 2px solid var(--purple);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .usp-icon svg { color: var(--purple); }
+    .usp-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 15px;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--text);
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 32px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 12px;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: clamp(32px, 4vw, 52px);
+      text-transform: uppercase; line-height: 1;
+      color: var(--purple); margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 16px; line-height: 1.6;
+      color: var(--gray); max-width: 580px;
+      margin-bottom: 48px;
+    }
+
+    /* ── ANKAUF SECTION ── */
+    #ankauf { background: var(--off); }
+    .ankauf-grid {
+      display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: start;
+    }
+    .ankauf-steps { margin-bottom: 40px; }
+    .step {
+      display: flex; gap: 16px; margin-bottom: 28px;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--purple);
+      color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 18px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step-text h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: 17px; letter-spacing: .5px;
+      text-transform: uppercase; color: var(--purple); margin-bottom: 4px;
+    }
+    .step-text p { font-size: 14px; color: var(--gray); line-height: 1.5; }
+    .ankauf-note {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: var(--purple);
+      color: var(--white);
+      border-radius: 8px; padding: 18px 20px;
+    }
+    .ankauf-note svg { flex-shrink: 0; margin-top: 2px; color: var(--orange); }
+    .ankauf-note p { font-size: 14px; line-height: 1.5; }
+    .ankauf-note strong { color: var(--orange); }
+
+    /* ── FORM ── */
+    .form-card {
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 40px rgba(61,20,114,0.12);
+      overflow: hidden;
+    }
+    .form-header {
+      background: var(--purple);
+      padding: 20px 28px;
+    }
+    .form-header h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 22px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--white);
+    }
+    .form-header p { font-size: 13px; color: rgba(255,255,255,.6); margin-top: 4px; }
+    .form-body { padding: 28px; }
+    .form-section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: 12px;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--orange); margin: 20px 0 12px;
+    }
+    .form-section-label:first-child { margin-top: 0; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-row.full { grid-template-columns: 1fr; }
+    .field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 4px; }
+    .field label {
+      font-size: 12px; font-weight: 600;
+      letter-spacing: .5px; text-transform: uppercase;
+      color: #555;
+    }
+    .field input, .field select, .field textarea {
+      padding: 10px 14px;
+      border: 1.5px solid #ddd;
+      border-radius: var(--radius);
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: #fafafa;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(61,20,114,0.1);
+      background: var(--white);
+    }
+    .field textarea { resize: vertical; min-height: 80px; }
+    .price-field { position: relative; }
+    .price-field input { padding-left: 36px; }
+    .price-prefix {
+      position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+      font-weight: 700; color: var(--purple); font-size: 15px;
+      pointer-events: none;
+    }
+    .form-divider {
+      border: none; border-top: 1px solid #eee;
+      margin: 20px 0;
+    }
+    .form-submit {
+      display: flex; flex-direction: column; gap: 10px; margin-top: 20px;
+    }
+    .btn-submit {
+      background: var(--orange); color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 18px;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 15px; border: none; border-radius: var(--radius);
+      cursor: pointer; transition: background .2s, transform .1s;
+      width: 100%;
+    }
+    .btn-submit:hover { background: var(--orange-h); transform: translateY(-1px); }
+    .form-disclaimer { font-size: 11px; color: #999; text-align: center; line-height: 1.5; }
+    .success-msg {
+      display: none;
+      background: #1a7a1a; color: white;
+      border-radius: 8px; padding: 20px; text-align: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 18px;
+      margin-top: 16px;
+    }
+
+    /* ── FAHRZEUGBESTAND ── */
+    #bestand { background: var(--white); }
+    .widget-container {
+      border-radius: 12px; overflow: hidden;
+      border: 2px solid rgba(61,20,114,0.12);
+      background: var(--off);
+      position: relative;
+      height: 800px;
+    }
+    .widget-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    @media (max-width: 600px) {
+      .widget-container { height: 600px; }
+    }
+
+    /* ── ÜBER UNS ── */
+    #ueber { background: var(--purple); }
+    #ueber .section-title { color: var(--white); }
+    #ueber .section-eyebrow { color: var(--orange); }
+    #ueber .section-sub { color: rgba(255,255,255,.65); }
+    .ueber-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;
+    }
+    .ueber-card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 10px; padding: 28px 24px;
+    }
+    .ueber-card-icon {
+      width: 48px; height: 48px;
+      background: var(--orange);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .ueber-card-icon svg { color: var(--white); }
+    .ueber-card h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 20px;
+      text-transform: uppercase; letter-spacing: .5px;
+      color: var(--white); margin-bottom: 10px;
+    }
+    .ueber-card p { font-size: 14px; color: rgba(255,255,255,.6); line-height: 1.6; }
+    .mobile-badge {
+      display: flex; align-items: center; gap: 16px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 10px; padding: 20px 28px;
+      margin-top: 32px;
+    }
+    .mobile-badge-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px; font-weight: 600;
+      color: rgba(255,255,255,.6); line-height: 1.4;
+    }
+    .mobile-badge-text strong {
+      display: block; font-size: 20px; font-weight: 900;
+      color: var(--white); letter-spacing: 1px; text-transform: uppercase;
+    }
+
+    /* ── KONTAKT ── */
+    #kontakt { background: var(--off); }
+    .kontakt-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+    }
+    .kontakt-info h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 28px;
+      text-transform: uppercase; color: var(--purple);
+      margin-bottom: 24px;
+    }
+    .kontakt-item {
+      display: flex; gap: 14px; margin-bottom: 20px; align-items: flex-start;
+    }
+    .kontakt-item-icon {
+      width: 42px; height: 42px; border-radius: 8px;
+      background: var(--purple);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .kontakt-item-icon svg { color: var(--white); }
+    .kontakt-item-text label {
+      display: block; font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gray); margin-bottom: 3px;
+    }
+    .kontakt-item-text span {
+      font-size: 16px; font-weight: 600; color: var(--text);
+    }
+    .openings {
+      background: var(--white);
+      border-radius: 10px; padding: 24px;
+      margin-top: 24px;
+      border: 1px solid rgba(61,20,114,.1);
+    }
+    .openings h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 16px;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: var(--purple); margin-bottom: 14px;
+    }
+    .opening-row {
+      display: flex; justify-content: space-between;
+      font-size: 14px; padding: 6px 0;
+      border-bottom: 1px solid #f0f0f0;
+      color: var(--text);
+    }
+    .opening-row:last-child { border-bottom: none; }
+    .opening-row .day { color: var(--gray); }
+    .map-placeholder {
+      background: #e8e4f0;
+      border-radius: 12px;
+      height: 100%;
+      min-height: 300px;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 16px;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .map-placeholder svg { color: var(--purple); opacity: .3; }
+    .map-placeholder p {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 16px;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--purple); opacity: .5;
+    }
+    /* 👉 Google Maps iFrame hier einfügen — .map-placeholder ersetzen */
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--purple-d);
+      padding: 32px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 24px;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--white); margin-bottom: 4px;
+    }
+    .footer-logo span { color: var(--orange); }
+    .footer-sub {
+      font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(255,255,255,.4); margin-bottom: 24px;
+    }
+    .footer-links {
+      display: flex; justify-content: center; gap: 32px;
+      flex-wrap: wrap; margin-bottom: 24px;
+    }
+    .footer-links a {
+      font-size: 13px; color: rgba(255,255,255,.5);
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--orange); }
+    .footer-copy {
+      font-size: 12px; color: rgba(255,255,255,.25);
+    }
+    .footer-divider {
+      border: none; border-top: 1px solid rgba(255,255,255,.1);
+      margin: 20px 0;
+    }
+
+    /* ── MOBILE NAV ── */
+    .mobile-menu {
+      display: none;
+      position: fixed; inset: 0; z-index: 99;
+      background: var(--purple-d);
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 32px;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--white);
+    }
+    .mobile-menu a.orange { color: var(--orange); }
+    .menu-close {
+      position: absolute; top: 20px; right: 24px;
+      background: none; border: none; cursor: pointer;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { max-width: 480px; }
+      .ankauf-grid { grid-template-columns: 1fr; }
+      .ueber-grid { grid-template-columns: 1fr 1fr; }
+      .kontakt-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+    }
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      section { padding: 60px 20px; }
+      .hero { padding: 96px 20px 60px; }
+      .usp-bar { padding: 16px 20px; }
+      .usp-bar-inner { gap: 24px; justify-content: flex-start; }
+      .ueber-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo">
+    <span>T</span>illi
+    <sub>KFZ ANKAUF &amp; VERKAUF</sub>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#ankauf">Auto verkaufen</a></li>
+    <li><a href="#bestand">Fahrzeuge</a></li>
+    <li><a href="#ueber">Über uns</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+    <li><a href="#ankauf" class="nav-cta">Jetzt bewerten</a></li>
+  </ul>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="menu-close" onclick="toggleMenu()">
+    <svg width="32" height="32" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <a href="#ankauf" onclick="toggleMenu()">Auto verkaufen</a>
+  <a href="#bestand" onclick="toggleMenu()">Fahrzeuge</a>
+  <a href="#ueber" onclick="toggleMenu()">Über uns</a>
+  <a href="#kontakt" onclick="toggleMenu()">Kontakt</a>
+  <a href="#ankauf" class="orange" onclick="toggleMenu()">Jetzt bewerten</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Partner von mobile.de</div>
+      <h1>Wir kaufen<br><span class="hl">Ihr Auto!</span></h1>
+      <div class="hero-badge">Auch ohne Termin</div>
+      <div class="hero-usps">
+        <div class="hero-usp">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Kostenlose Bewertung
+        </div>
+        <div class="hero-usp">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Schnelle Abwicklung
+        </div>
+        <div class="hero-usp">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v2m0 8v2m-4-7h8"/></svg>
+          Faire Preise
+        </div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-icon">
+        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 52 L14 30 Q16 22 26 22 H54 Q64 22 66 30 L70 52 Q72 54 70 56 L66 58 Q64 62 60 62 Q56 62 54 58 H26 Q24 62 20 62 Q16 62 14 58 L10 56 Q8 54 10 52Z" fill="white" opacity=".15"/>
+          <path d="M10 52 L14 30 Q16 22 26 22 H54 Q64 22 66 30 L70 52 Q72 54 70 56 L66 58 Q64 62 60 62 Q56 62 54 58 H26 Q24 62 20 62 Q16 62 14 58 L10 56 Q8 54 10 52Z" stroke="white" stroke-width="2.5" fill="none"/>
+          <circle cx="20" cy="58" r="6" fill="white" opacity=".9"/>
+          <circle cx="60" cy="58" r="6" fill="white" opacity=".9"/>
+          <path d="M26 22 L30 10 H50 L54 22" stroke="white" stroke-width="2" fill="none"/>
+          <path d="M14 46 H66" stroke="white" stroke-width="2"/>
+          <path d="M36 42 L46 32 M44 32 H46 V34" stroke="#E85200" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="hero-card-title">Fahrzeug bewerten</div>
+      <div class="hero-card-sub">In 2 Minuten — sofort Angebot erhalten</div>
+      <a href="#ankauf" class="btn-primary">Jetzt starten →</a>
+    </div>
+  </div>
+</section>
+
+<!-- USP BAR -->
+<div class="usp-bar">
+  <div class="usp-bar-inner">
+    <div class="usp-item">
+      <div class="usp-icon">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <span class="usp-label">Kostenlose Bewertung</span>
+    </div>
+    <div class="usp-item">
+      <div class="usp-icon">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <span class="usp-label">Schnelle Abwicklung</span>
+    </div>
+    <div class="usp-item">
+      <div class="usp-icon">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v2m0 8v2m-4-7h8"/></svg>
+      </div>
+      <span class="usp-label">Faire Preise</span>
+    </div>
+    <div class="usp-item">
+      <div class="usp-icon">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <span class="usp-label">Persönliche Beratung</span>
+    </div>
+  </div>
+</div>
+
+<!-- ANKAUF / FORMULAR -->
+<section id="ankauf">
+  <div class="section-inner">
+    <div class="ankauf-grid">
+      <!-- Links: Info -->
+      <div>
+        <div class="section-eyebrow">Auto Ankauf</div>
+        <h2 class="section-title">Ihr Auto in guten Händen</h2>
+        <p class="section-sub">Wir machen Ihnen ein faires Angebot für Ihr Fahrzeug — schnell, unkompliziert und ohne versteckte Kosten.</p>
+
+        <div class="ankauf-steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-text">
+              <h4>Fahrzeug beschreiben</h4>
+              <p>Füllen Sie das Formular aus — Marke, Modell, Kilometerstand und Zustand. Dauert nur 2 Minuten.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-text">
+              <h4>Angebot erhalten</h4>
+              <p>Wir melden uns innerhalb von 24 Stunden mit einem konkreten Kaufangebot bei Ihnen.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-text">
+              <h4>Direkte Auszahlung</h4>
+              <p>Sie bringen das Fahrzeug vorbei, wir prüfen kurz, und Sie erhalten sofort Ihr Geld.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ankauf-note">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+          <p><strong>Auch ohne Termin!</strong> Kommen Sie einfach direkt zu uns. Wir nehmen uns die Zeit für eine persönliche Bewertung vor Ort.</p>
+        </div>
+      </div>
+
+      <!-- Rechts: Formular -->
+      <div class="form-card">
+        <div class="form-header">
+          <h3>Fahrzeug zur Bewertung anmelden</h3>
+          <p>Alle Felder sind optional — je mehr Sie ausfüllen, desto genauer unser Angebot</p>
+        </div>
+        <div class="form-body">
+          <form id="ankaufForm" onsubmit="submitForm(event)">
+
+            <div class="form-section-label">Fahrzeugdaten</div>
+            <div class="form-row">
+              <div class="field">
+                <label>Marke</label>
+                <select name="marke">
+                  <option value="">Bitte wählen…</option>
+                  <option>Audi</option><option>BMW</option><option>Ford</option>
+                  <option>Mercedes-Benz</option><option>Opel</option><option>Renault</option>
+                  <option>Seat</option><option>Skoda</option><option>Toyota</option>
+                  <option>Volkswagen</option><option>Andere</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Modell</label>
+                <input type="text" name="modell" placeholder="z. B. Golf, A3, 3er…">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label>Baujahr</label>
+                <select name="baujahr">
+                  <option value="">Bitte wählen…</option>
+                  <option>2024</option><option>2023</option><option>2022</option>
+                  <option>2021</option><option>2020</option><option>2019</option>
+                  <option>2018</option><option>2017</option><option>2016</option>
+                  <option>2015</option><option>2010–2014</option><option>vor 2010</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Kilometerstand</label>
+                <input type="text" name="km" placeholder="z. B. 85.000 km">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label>Kraftstoff</label>
+                <select name="kraftstoff">
+                  <option value="">Bitte wählen…</option>
+                  <option>Benzin</option><option>Diesel</option>
+                  <option>Elektro</option><option>Hybrid</option>
+                  <option>Erdgas (CNG)</option><option>Flüssiggas (LPG)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Getriebe</label>
+                <select name="getriebe">
+                  <option value="">Bitte wählen…</option>
+                  <option>Schaltgetriebe</option>
+                  <option>Automatik</option>
+                  <option>Halbautomatik</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row full">
+              <div class="field">
+                <label>Fahrzeugzustand</label>
+                <select name="zustand">
+                  <option value="">Bitte wählen…</option>
+                  <option>Sehr gut (neuwertig)</option>
+                  <option>Gut (normale Gebrauchsspuren)</option>
+                  <option>Befriedigend (sichtbare Mängel)</option>
+                  <option>Defekt / Unfallschaden</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row full">
+              <div class="field">
+                <label>Besonderheiten / Ausstattung</label>
+                <textarea name="besonderheiten" placeholder="z. B. Sitzheizung, Navigationssystem, Unfallschäden, Reparaturstau…"></textarea>
+              </div>
+            </div>
+
+            <hr class="form-divider">
+            <div class="form-section-label">Ihre Preisvorstellung</div>
+
+            <div class="form-row full">
+              <div class="field">
+                <label>Gewünschter Verkaufspreis (€)</label>
+                <div class="price-field">
+                  <span class="price-prefix">€</span>
+                  <input type="number" name="preis" placeholder="z. B. 8500" min="0" step="100">
+                </div>
+              </div>
+            </div>
+
+            <hr class="form-divider">
+            <div class="form-section-label">Ihre Kontaktdaten</div>
+
+            <div class="form-row">
+              <div class="field">
+                <label>Vorname</label>
+                <input type="text" name="vorname" placeholder="Max">
+              </div>
+              <div class="field">
+                <label>Nachname</label>
+                <input type="text" name="nachname" placeholder="Mustermann">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label>Telefon</label>
+                <input type="tel" name="telefon" placeholder="+49 …">
+              </div>
+              <div class="field">
+                <label>E-Mail</label>
+                <input type="email" name="email" placeholder="max@beispiel.de">
+              </div>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn-submit">Jetzt Angebot anfragen →</button>
+              <p class="form-disclaimer">Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben. Mit dem Absenden stimmen Sie unserer Datenschutzerklärung zu.</p>
+            </div>
+          </form>
+          <div class="success-msg" id="successMsg">
+            ✓ Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAHRZEUGBESTAND -->
+<section id="bestand">
+  <div class="section-inner">
+    <div class="section-eyebrow">Aktuelle Fahrzeuge</div>
+    <h2 class="section-title">Unser Fahrzeugbestand</h2>
+    <p class="section-sub">Alle unsere Fahrzeuge finden Sie direkt auf mobile.de — Deutschlands größtem Fahrzeugmarkt.</p>
+
+    <!-- 👇 mobile.de Händler-Widget (Customer ID: 465208) -->
+    <div class="widget-container">
+      <iframe
+        src="https://home.mobile.de/home/index.html?partnerHead=false&customerId=465208"
+        title="Autohaus Tilli Fahrzeugbestand auf mobile.de"
+        loading="lazy"
+        allow="fullscreen">
+      </iframe>
+    </div>
+    <!-- 👆 ENDE Widget Bereich -->
+
+    <div style="text-align:center; margin-top: 32px;">
+      <a href="https://home.mobile.de/home/index.html?customerId=465208" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block; width:auto; padding: 14px 40px;">
+        Alle Fahrzeuge auf mobile.de ansehen →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ÜBER UNS -->
+<section id="ueber">
+  <div class="section-inner">
+    <div class="section-eyebrow">Über uns</div>
+    <h2 class="section-title">Ihr verlässlicher<br>KFZ-Partner</h2>
+    <p class="section-sub">Autohaus Tilli steht für ehrlichen Fahrzeughandel — mit Fairness, Transparenz und echtem Engagement für jeden Kunden.</p>
+
+    <div class="ueber-grid">
+      <div class="ueber-card">
+        <div class="ueber-card-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h4>Faire Preise</h4>
+        <p>Wir zahlen marktgerechte Preise — ohne unnötige Verhandlung. Kein Druck, kein Theater.</p>
+      </div>
+      <div class="ueber-card">
+        <div class="ueber-card-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h4>Sofortige Abwicklung</h4>
+        <p>Fahrzeug bringen, kurze Prüfung, direkte Auszahlung. Kein Warten, keine Bürokratie.</p>
+      </div>
+      <div class="ueber-card">
+        <div class="ueber-card-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>Persönliche Beratung</h4>
+        <p>Kein Callcenter, keine langen Wartezeiten. Wir nehmen uns Zeit für jeden Kunden persönlich.</p>
+      </div>
+    </div>
+
+    <div class="mobile-badge">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="48" height="48" rx="8" fill="#E85200"/>
+        <text x="8" y="34" font-family="Arial" font-weight="900" font-size="22" fill="white">m.</text>
+      </svg>
+      <div class="mobile-badge-text">
+        <strong>Partner von mobile.de</strong>
+        Deutschlands größter Fahrzeugmarkt — unsere Fahrzeuge sind dort gelistet und geprüft.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+  <div class="section-inner">
+    <div class="section-eyebrow">Kontakt</div>
+    <h2 class="section-title">So finden Sie uns</h2>
+
+    <div class="kontakt-grid">
+      <div class="kontakt-info">
+        <h3>Autohaus Tilli</h3>
+
+        <div class="kontakt-item">
+          <div class="kontakt-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="kontakt-item-text">
+            <label>Adresse</label>
+            <!-- 👇 Adresse hier eintragen -->
+            <span>Musterstraße 12, 12345 Musterstadt</span>
+          </div>
+        </div>
+
+        <div class="kontakt-item">
+          <div class="kontakt-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.95 12 19.79 19.79 0 0 1 1.93 3.4 2 2 0 0 1 3.9 1.23h3a2 2 0 0 1 2 1.72c.212.965.455 1.92.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l1.13-1.13a2 2 0 0 1 2.11-.45c.89.245 1.845.488 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="kontakt-item-text">
+            <label>Telefon</label>
+            <!-- 👇 Telefonnummer hier eintragen -->
+            <span><a href="tel:+49000000000">+49 (0) 000 000000</a></span>
+          </div>
+        </div>
+
+        <div class="kontakt-item">
+          <div class="kontakt-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="kontakt-item-text">
+            <label>E-Mail</label>
+            <!-- 👇 E-Mail hier eintragen -->
+            <span><a href="mailto:info@autohaus-tilli.de">info@autohaus-tilli.de</a></span>
+          </div>
+        </div>
+
+        <div class="openings">
+          <h4>Öffnungszeiten</h4>
+          <!-- 👇 Öffnungszeiten anpassen -->
+          <div class="opening-row"><span class="day">Montag – Freitag</span><span>09:00 – 18:00 Uhr</span></div>
+          <div class="opening-row"><span class="day">Samstag</span><span>10:00 – 14:00 Uhr</span></div>
+          <div class="opening-row"><span class="day">Sonntag</span><span>Geschlossen</span></div>
+          <div class="opening-row" style="color: var(--orange); font-size: 13px; font-weight: 600; border-bottom: none; padding-top: 12px;">
+            <span colspan="2">✓ Auch ohne Termin willkommen!</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 👇 Google Maps hier einfügen (iframe) -->
+      <div class="map-placeholder">
+        <svg width="60" height="60" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <p>Google Maps hier einfügen</p>
+      </div>
+      <!-- 👆 Beispiel: <iframe src="https://maps.google.com/maps?q=IHRE+ADRESSE&output=embed" ... ></iframe> -->
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><span>T</span>illi</div>
+  <div class="footer-sub">KFZ Ankauf &amp; Verkauf</div>
+  <div class="footer-links">
+    <a href="#">Impressum</a>
+    <a href="#">Datenschutz</a>
+    <a href="#">AGB</a>
+    <a href="https://www.mobile.de" target="_blank" rel="noopener">mobile.de</a>
+  </div>
+  <hr class="footer-divider">
+  <div class="footer-copy">© 2025 Autohaus Tilli · Alle Rechte vorbehalten</div>
+</footer>
+
+<script>
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // Form submit (Placeholder — später durch echte Backend-Anbindung ersetzen)
+  function submitForm(e) {
+    e.preventDefault();
+    document.getElementById('ankaufForm').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+    // TODO: Formular-Daten per fetch() an Backend / E-Mail-Service senden
+  }
+
+  // Smooth nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--orange)' : '';
+    });
+  });
+</script>
+
+</body>
+</html>
