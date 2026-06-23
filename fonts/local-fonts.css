@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/e00cdc959223d7b14c4dc4172bd4afb7.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/c7ccb9579aa638b5be6d45e7f4dd9fff.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/1b329c1cdb66406c5657158e802b0e29.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/de3ddb9049275796b4e8be23db8c0c53.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(fonts/bf0cc102c81605b16ca84f35edaa3d73.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/e8054fd46636c2e1099d4a982a44a450.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/b44a0701327519e6deb9aee5e733e242.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/86ef2a21fb4f8dc9f1f4f3c382615372.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/8dfdf793a6297fb9895a785f09e0602b.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(fonts/d6a0dabfbe5e4caf425cfabdb81179af.ttf) format('truetype');
+}
